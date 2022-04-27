@@ -1,0 +1,202 @@
+.scstudioslider {
+    .container {
+        .scstudioslider__option {
+            padding-bottom: 60px;
+            border-bottom: 1px solid $black-cl;
+        }
+    }
+    &__btn {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+    &__image {
+        @include size(100%, 500px);
+        // padding-bottom: 500px;
+        position: relative;
+        .flickity-viewport {
+            height: 100% !important;
+        }
+        img {
+            @include size(100%, 100%);
+            object-fit: cover;
+        }
+    }
+    .flickity-enabled.is-fullscreen {
+        object-fit: cover;
+        padding: 0px;
+    }
+    
+    &__option {
+        @include midflex;
+        padding-left: 20px;
+        padding-right: 20px;
+        &-dimension {
+            .title {
+                @include text(12px, pr, 30px, $black, uppercase);
+                letter-spacing: 2.4px;
+            }
+            .size {
+                @include text(14px, pr, 20px, $black, none);
+            }
+        }
+        &-btn {
+            @include midflex;
+            .download {
+                @include text(12px, pr, 30px, $black, none);
+                padding-right: 11px;
+                &:hover {
+                    cursor: pointer;
+                    opacity: 0.6;
+                }
+            }
+            .fullscreen {
+                @include text(12px, pr, 30px, $black, none);
+                padding-right: 22px;
+                cursor: pointer;
+            }
+            .btnctrl {
+                @include midflex;
+                p {
+                    @include text(12px, pr, 30px, $black, none);
+                    padding-right: 20px;
+                }
+                &.btnpre {
+                    border-right: 1px solid $black-cl;
+                    p {
+                        padding-left: 20px;
+                    }
+                }
+                &.btnnext {
+                    margin-left: 20px;
+                }
+                &:hover {
+                    cursor: pointer;
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+    @include xs {
+        .container {
+            .scstudioslider__option {
+                padding-bottom: 35px;
+                border-bottom: none;
+            }
+        }
+        &__btn {
+            margin-bottom: 25px;
+            margin-top: -40px;
+        }
+        &__image {
+            @include size(100%, 200px);
+        }
+        &__option {
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+            &-card {
+                margin-right: 30px;
+            }
+            
+            &-btn {
+                display: none;
+            }
+        }
+    }
+}
+
+.scdetail {
+    .container {
+        margin-top: 30px;
+        padding: 0 20px;
+        display: flex;
+        // justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    &__pricing {
+        width: calc((100% / 2) - 60px);
+        &-title {
+            @include text(32px, pe, 30.48px, $brown-cl, none);
+            padding-bottom: 30px;
+        }
+        &-desc {
+            @include text(14px, pr, 20px, $grey-cl, none);
+            margin-bottom: 25px;
+            span {
+                font-weight: bold;
+            }
+        }
+        &-table {
+            .item {
+                @include midflex;
+                border: 1px solid $black-cl;
+                padding: 20px 60px;
+                &:nth-child(2) {
+                    border-top: none;
+                    border-bottom: none;
+                }
+                &:nth-child(3) {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+    &__floorplan {
+        margin-left: 60px;
+        h2 {
+            @include text(32px, pe, 30.48px, $brown-cl, none);
+            padding-bottom: 94px;
+        }
+    }
+    @include xs {
+        &__pricing {
+            width: 100%;
+            padding-bottom: 32px;
+        }
+        &__floorplan {
+            margin-left: 0;
+            h2 {
+                padding-bottom: 25px;
+            }
+        }
+    }
+}
+
+.scspecs {
+    padding-top: 57px;
+    h2 {
+        @include text(32px, pe, 30.48px, $brown-cl, none);
+        padding-bottom: 34px;
+    }
+    &__item {
+        display: flex;
+        .text {
+            width: calc(100% / 2);
+            p {
+                @include text(14px, pr, 20px, $grey-cl, none);
+                padding-bottom: 12px;
+            }
+        }
+    }
+    &__booknow {
+        @include mid(true);
+        flex-direction: column;
+        padding-bottom: 70px;
+        padding-top: 45px;
+    
+        i {
+            padding-bottom: 20px;
+        }
+        
+    }
+    @include xs {
+        &__item {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

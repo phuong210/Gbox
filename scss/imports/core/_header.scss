@@ -1,0 +1,163 @@
+// css header
+.progress-bar {
+    @include size(0%, 3px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 400;
+    background: $yellow-cl;
+}
+header {
+    width: 100%;
+    // height: 138px;
+    // height: 100%;
+    .top {
+        height: 72px;
+        background: $gray-cl;
+        padding: 12px 0;
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: calc(var(--gap) / 2);
+            .btnmenu {
+                @include visible(0);
+                @include size(30px);
+                position: relative;
+                left: 1px;
+                cursor: pointer;
+                overflow: hidden;
+                margin: 14px 0;
+                span {
+                    display: block;
+                    height: 2px;
+                    width: 100%;
+                    background: $yellow-cl;
+                    position: relative;
+                    @include transition($t);
+                
+                    &::before,
+                    &::after {
+                        @include afterbefore(100%, 2px, $yellow-cl);
+                        top: 8px;
+                        display: block;
+                    }
+                
+                    &::before {
+                        transform: translateY(0px);
+                    }
+                
+                    &::after {
+                        transform: translateY(8px);
+                    }
+                
+                }
+                
+                &.active {
+                    span {
+                        height: 0;
+                
+                        &::after {
+                            @include transform(rotate(45deg));
+                        }
+                
+                        &::before {
+                            @include transform(rotate(-45deg));
+                        }
+                    }
+                }
+            }
+            .logo {
+                text-align: center;
+                padding-top: 2px;
+            }
+            .facebook {
+                text-align: right;
+                padding: 12px 0;
+            }
+            
+        }
+        &.active {
+            position: fixed;
+            z-index: 300;
+            background: $white-cl;
+            width: 100%;
+            height: 70px;
+            top: 0;
+        }
+
+    }
+    .bottom {
+        .container {
+            display: block;
+            height: 38px;
+            width: 100%;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: calc(var(--gap) / 2);
+            position: relative;
+            &::after {
+                @include afterbefore(1070px, 1px, $black);
+                display: block;
+                @include mid();
+                margin-top: 20px;
+            }
+            .left {
+                @include text(12px, psb, 30.48px, $black, uppercase);
+                &:hover {
+                    color: $yellow-cl;
+                    @include transition($t);
+                }
+            }
+            
+            .menu {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+            
+                a {
+                    padding: 0 30px;
+                    @include text(12px, psb, 30.48px, $black, uppercase);
+                    &:hover {
+                        color: $yellow-cl;
+                        @include transition($t);
+                    }
+                }
+            }
+            
+            .right {
+                text-align: right;
+                @include text(12px, psb, 30.48px, $black, uppercase);
+                &:hover {
+                    color: $yellow-cl;
+                    @include transition($t);
+                }
+            }
+            
+        }
+        &.active {
+            .container {
+                margin: 10px auto;
+            }
+            position: fixed;
+            z-index: 300;
+            background: $white-cl;
+            width: 100%;
+            top: 0;
+            height: 50px;
+        }
+        
+    }
+    @include xs {
+        .top {
+            .container {
+                .btnmenu {
+                    
+                    @include visible(1);
+                }
+            }
+        }
+        .bottom {
+            display: none;
+        }
+    }
+}

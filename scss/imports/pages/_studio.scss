@@ -1,0 +1,121 @@
+// CSS STUDIOPAGE
+
+.studio {
+    width: 100%;
+    padding-top: 73px;
+    padding-bottom: 50px;
+    .container {
+        @include grid(2);
+        row-gap: 70px;
+        column-gap: 30px;
+        .studio__card-item {
+            width: 100%;
+            .img {
+                height: 0;
+                padding-bottom: 60%;
+                overflow: hidden;
+                position: relative;
+                img {
+                    // @include filter(100%);
+                    position: absolute;
+                    @include size(100%, 100%);
+                    object-fit: cover;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) scale(1);
+                    @include transition($t);
+                }
+                &::before {
+                    @include afterbefore(100%, 100%, $black-cl);
+                    bottom: 0;
+                    z-index: 2;
+                    opacity: 0.5;
+                    pointer-events: none;
+                    @include transition($t);
+                }
+            }
+            .title {
+                @include midflex;
+                @include transition($t);
+                .details {
+                    @include mid(true);
+                    flex-direction: column;
+                    margin-right: 20px;
+                    .desc {
+                        @include text(12px, psb, 30.48px, $black, uppercase);
+                    }
+                    .scroll {
+                        @include filter(100%);
+                    }
+                }
+                    
+            }
+            &:hover {
+                .img {
+                    img {
+                        transform: translate(-50%, -50%) scale(1.2);
+                    }
+                    // @include filter(0);
+                    &::before {
+                        display: none;
+                    }
+                }
+                .title {
+                    background: $black-tt;
+                    .content {
+                        .info,
+                        .size {
+                            color: $white-cl;
+                        }
+                    }
+                    
+                    .details {
+                        
+                        .desc {
+                            color: $white-cl;
+                        }
+                
+                        .scroll {
+                            @include filter(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // @include sm {
+    //     .container {
+    //         .studio__card-item {
+    //             .title {
+    //                 .studio-number {
+    //                     width: 100px;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+    @include xs {
+        .container {
+            margin-top: -45px;
+            margin-bottom: -30px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            .studio__card-item {
+                width: 100%;
+                padding-bottom: 30px;
+                .details {
+                    .desc {
+                        display: none;
+                    }
+                    .scroll {
+                        @include transform(rotate(-90deg));
+                    }
+                }
+            }
+        }
+    }
+}
+

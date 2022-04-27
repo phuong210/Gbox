@@ -1,0 +1,127 @@
+// css footer
+
+footer {
+    .footer__info {
+        .wrapper {
+            @include midflex;
+            @include text(12px, pr, 30.48px, $black, uppercase);
+            letter-spacing: 1.2px;
+            padding-bottom: 12px;
+            border-top: 1px solid $black;
+            padding-top: 57px;
+            &__item {
+                width: calc(100% / 2);
+                &:first-child {
+
+                    .bottom {
+                        padding-top: 30px;
+                        span {
+                            padding-left: 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer__contact {
+        background: $yellow-cl;
+        padding-top: 20px;
+        .wrapper__contact {
+            display: flex;
+            justify-content: space-between;
+            @include text(12px, pr, 28px, $black, uppercase);
+            .wrapper__item {
+                width: calc(100% / 2);
+                .form {
+                    display: flex;
+                    justify-content: space-between;
+                    &__item {
+                        width: calc((100% / 2) - 32px);
+                        .text {
+                            input {
+                                width: 100%;
+                                outline: none;
+                                border: 0;
+                                border-bottom: 1px solid $black-cl;
+                                font-family: Arial, Helvetica, sans-serif;
+                                background: transparent;
+                            }
+                        }
+                        &:last-child {
+                            .submit {
+                                text-align: right;
+                                margin-top: 20px;
+                                .box {
+                                    @include text(10px, pb, 20px, $white-cl, uppercase);
+                                    background: $black-cl;
+                                    cursor: pointer;
+                                    padding: 6px 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:last-child {
+                    text-transform: none;
+                }
+            }
+            
+        }
+    }
+    .footer__copyright {
+        margin-top: -1px;
+        background: $yellow-cl;
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 155px;
+        @include text(10px, pr, 30.48px, $black, uppercase);
+        letter-spacing: 1px;
+        a {
+            @include transition($t);
+        }
+    }
+    @include xs {
+        .footer__info {
+            .wrapper {
+                &__item {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0 auto;
+                    text-align: center;
+                    &:first-child {
+                        .bottom {
+                            padding-top: 0px;
+                        }
+                    }
+                    
+                    &:last-child {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .footer__contact {
+            background: $white-cl;
+            padding-top: 0px;
+            padding-bottom: 25px;
+            // padding-top: 20px;
+            .wrapper__contact {
+                .wrapper__item {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0 auto;
+                    text-align: center;
+                    &:last-child {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .footer__copyright {
+            padding-bottom: 50px;
+        }
+    }
+}
+
+
+

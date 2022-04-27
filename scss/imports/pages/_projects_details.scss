@@ -1,0 +1,129 @@
+.scproject {
+    padding-top: 25px;
+    // position: relative;
+    &__title {
+        @include midflex;
+        padding-bottom: 40px;
+        &-name {
+            @include text(14px, pl, 22px, $black, uppercase);
+            letter-spacing: 2.8px;
+        }
+        &-option {
+            @include midflex;
+            .fullscreen {
+                padding-right: 108px;
+                
+            }
+            .backtoall {
+                @include midflex;
+            }
+        }
+    }
+    
+    &__slider {
+        @include size(100%, 53rem);
+        position: relative;
+        .flickity-viewport {
+            height: 100% !important;
+        }
+        img {
+            @include size(100%, 100%);
+            object-fit: cover;
+        }
+        
+    }
+    .flickity-enabled.is-fullscreen {
+        object-fit: cover;
+        padding: 0px;
+        
+    }
+    &__content {
+        h3 {
+            @include text(14px, pl, 22px, $black, uppercase);
+            letter-spacing: 2.8px;
+        }
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 82px;
+        padding-top: 30px;
+        &-desc {
+            max-width: 320px;
+            p {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 11px;
+                line-height: 22px;
+                max-width: 320px;
+            }
+        }
+        &-client {
+            h3 {
+                @include text(14px, pl, 22px, $black, uppercase);
+            }
+            p {
+                font-size: 11px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: $black;
+                line-height: 22px;
+                font-style: italic;
+            }
+        }
+        &-team {
+            padding-right: 104px;
+            h3 {
+                font-size: 14px;
+                font-family: pl;
+                color: $black;
+                text-transform: uppercase;
+            }
+            p {
+                font-size: 11px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .people {
+                text-transform: uppercase;
+            }
+            
+            .name {
+                font-style: italic;
+            }
+        }
+    }
+    @include xs {
+        &__title {
+            padding-bottom: 30px;
+            &-option {
+                .fullscreen {
+                    display: none;
+                }
+            }
+        }
+        &__slider {
+            @include size(100%, 200px);
+        }
+        &__content {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 38px;
+            &-desc {
+                order: 2;
+                padding-bottom: 47px;
+                p {
+                    padding-top: 17px;
+                }
+            }
+            &-client {
+                order: 1;
+                padding-bottom: 47px;
+                p {
+                    padding-top: 17px;
+                }
+            }
+            &-team {
+                order: 3;
+                h3 {
+                    padding-bottom: 17px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.scabout {
+    background: url(../img/banner-about.png) no-repeat;
+    background-position: 100% center;
+    background-size: contain;
+    background-color: #282828;
+    margin-top: -30px;
+    &__heading {
+        max-width: 290px;
+        @include text(36px, pb, 58px, $yellow-cl, uppercase);
+        letter-spacing: 3.6px;
+        padding-bottom: 14px;
+        padding-top: 92px;
+    }
+    &__content {
+        max-width: 872px;
+        padding-bottom: 60px;
+        @include text(18px, pl, 40px, #e4e4e4, none);
+        letter-spacing: -0.45px;
+        span {
+            text-transform: uppercase;
+        }
+    }
+    &__booknow {
+        display: flex;
+        padding-bottom: 73px;
+        &-btn {
+            background: $yellow-cl;
+            color: #171716;
+            margin-right: 18px;
+        }
+        &-desc {
+            max-width: 100px;
+            @include text(14px, pr, 20px, #e9e9ea, none);
+        }
+    }
+
+    @include xs {
+    margin-top: 0;
+    }
+}

@@ -1,0 +1,411 @@
+// css img, button, heading, title, input, elements, components...
+img {
+    max-width: 100%;
+    height: auto;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    &.--center {
+        margin: 0 auto;
+        display: block;
+    }
+}
+a {
+    text-decoration: none;
+}
+
+// colors (tuỳ chỉnh)
+.--white-cl {
+    color: $white-cl;
+}
+.--black-cl {
+    color: $black-cl;
+}
+.--blue-cl {
+    color: $blue-cl;
+}
+
+// css article (nội dung chi tiết bài viết)
+article {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        // font-family: ib; // font bold
+        display: block;
+    }
+    h1 {
+        font-size: var(--h1-fs);
+        line-height: var(--h1-lh);
+        margin: 0 0 0.67rem 0;
+    }
+    h2 {
+        font-size: var(--h2-fs);
+        line-height: var(--h2-lh);
+        margin: 0 0 0.75rem 0;
+    }
+    h3 {
+        font-size: var(--h3-fs);
+        line-height: var(--h3-lh);
+        margin: 0 0 0.83rem 0;
+    }
+    h4 {
+        font-size: var(--h4-fs);
+        line-height: var(--h4-lh);
+        margin: 0 0 1.12rem 0;
+    }
+    h5 {
+        font-size: var(--h5-fs);
+        line-height: var(--h5-lh);
+        margin: 0 0 1.5rem 0;
+    }
+    h6 {
+        font-size: 0.67rem;
+        margin: 0 0 1.67rem 0;
+    }
+
+    p {
+        margin: 0 0 1.12rem 0;
+    }
+    strong {
+        // font-family: ib; // font bold
+    }
+    ol,
+    ul {
+        list-style: initial;
+        padding-left: 18px;
+    }
+    img {
+        display: inline-block;
+        height: auto;
+        overflow: hidden;
+        border-radius: 10px;
+        margin: 25px auto;
+    }
+    .video {
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+        position: relative;
+        margin: 25px auto;
+        iframe,
+        video {
+            position: absolute;
+            @include size(100%);
+            top: 0;
+            left: 0;
+        }
+    }
+    @include xs {
+        img {
+            margin: 20px auto;
+        }
+    }
+}
+
+.heading {
+    font-family: ib;
+    &.--h1 {
+        font-size: var(--h1-fs);
+        line-height: var(--h1-lh);
+    }
+    &.--h2 {
+        font-size: var(--h2-fs);
+        line-height: var(--h2-lh);
+    }
+}
+
+// TITLE
+.title {
+    @include text(12px, psb, 30.48px, $black, uppercase);
+}
+
+// CARD HOME
+.card {
+    width: 100%;
+    margin: 30px auto;
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(var(--gap) / 2);
+    &.active {
+        display: grid;
+    }
+    .image {
+        height: 0;
+        padding-bottom: 60%;
+        overflow: hidden;
+        position: relative;
+        img {
+            position: absolute;
+            @include size(100%, 100%);
+            object-fit: cover;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            @include transition($t);
+            &:hover {
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+        }
+    }
+    .content {
+        text-align: center;
+        padding-top: 28px;
+        &__title {
+            @include text(12px, pb, 30.48px, $black, uppercase);
+            position: relative;
+            display: inline-block;
+            &::after{
+                @include afterbefore(16px, 2px, $yellow-cl);
+                @include mid(false);
+                display: block;
+                top: 30px;
+            }
+        }
+        &__desc {
+            padding-top: 5px;
+            @include text(12px, pr, 20px, $black, none);
+            span {
+                font-style: italic;
+            }
+        }
+    }
+}
+
+// CARD NUMBER
+.card__number {
+    background: $yellow-cl;
+    @include mid(true);
+    flex-direction: column;
+    padding: 20px 40px;
+    width: 120px;
+    .text {
+        @include text(11px, pr, normal, $black, uppercase);
+    }
+    .number {
+        @include text(61px, db, normal, $black, uppercase);
+    }
+    @include sm {
+        width: 90px;
+            padding: 20px 20px;
+        .number {
+            font-size: 30px;
+        }
+    }
+    @include xs {
+        .text {
+            @include text(12px, pr, 12.49px, $black, uppercase);
+        }
+        
+        .number {
+            @include text(38.38px, db, 42px, $black, uppercase);
+        }
+    }
+}
+
+// BACK TO ALL
+.card__backtoall {
+    @include text(12px, pr, 30px, $black, normal);
+
+    span {
+        padding-right: 26px;
+    }
+
+    .back {
+        @include transform(rotate(90deg));
+
+    }
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+
+        .back {
+            // padding-top: 13px;
+            @include transition($t);
+        }
+    }
+}
+
+// DIMENSIONS
+.dimensions {
+    padding-right: 30px;
+    .info {
+        @include text(12px, pr, 30.48px, $black, uppercase);
+    }
+    
+    .size {
+        @include text(12px, pr, 20px, $black, none);
+    }
+}
+
+// FULLSCREEN
+.fullscreen {
+    @include midflex;
+    // padding-right: 108px;
+    @include text(12px, pr, 30px, $black, normal);
+
+    p {
+        padding-right: 20px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+    }
+}
+
+// LABEL RENTAL
+label.title__form {
+    @include text(12px, pr, normal, $black, normal);
+}
+
+// WELCOME TO
+.hd__welcome {
+    max-width: 84px;
+    margin: 0 auto;
+    @include text(14px, pl, 22px, $black, uppercase);
+    letter-spacing: 2.8px;
+    text-align: center;
+    padding-bottom: 17px;
+}
+
+// FOOTER CONTACT
+.scfooter__contact {
+    &-item {
+        display: flex;
+        padding-bottom: 40px;
+        background: $yellow-cl;
+        .footer__info {
+            .wrapper {
+                border-top: 0;
+                &__item {
+                    margin-top: -19px;
+                    width: 100%;
+                    padding-left: 306px;
+                    padding-right: 125px;
+                }
+            }
+            
+        }
+        .footer__contact {
+            .wrapper__contact {
+                .wrapper__item {
+                    margin-top: 17px;
+                    width: 100%;
+                    
+                }
+            }
+        }
+    }
+    @include xs {
+        &-item {
+            display: none;
+        }
+    }
+}
+
+.footer__about {
+    .footer__info {
+        .wrapper {
+            border-top: 0;
+        }
+    }
+}
+
+// BUTTON SUBMIT
+.btn__book-submit {
+    // height: 100px;
+    background: #525355;
+    padding: 36px 10px;
+    border-radius: 12px;
+    @include text(24px, pe, 30.48px, $yellow-cl, uppercase);
+
+    &:hover {
+        color: $white-cl;
+        background: $yellow-cl;
+        cursor: pointer;
+    }
+}
+
+// BUTTON BOOK NOW
+
+.btnbooknow {
+    @include mid(true);
+    border-radius: 8px;
+    max-width: 100px;
+    height: 100px;
+    padding: 24px 18px;
+    @include text(24px, pe, 30.48px, $yellow-cl, uppercase);
+    background: #525355;
+    
+    &:hover {
+        color: $white-cl;
+        background: $yellow-cl;
+        cursor: pointer;
+    }
+}
+
+// ALL WORK - HOME PAGE
+.project__all {
+    width: 100%;
+    padding-bottom: 70px;
+
+    &-menu {
+        @include text(12px, psb, 30.48px, $greyish, uppercase);
+        max-width: 170px;
+        margin: 0 auto;
+        @include midflex;
+        .tab {
+            &.active {
+                color: $black;
+                @include transition($t);
+            }
+
+            &:hover {
+                color: $black;
+                cursor: pointer;
+                @include transition($t);
+            }
+        }
+    }
+
+    &__card {
+        &-item {
+            padding-bottom: 50px;
+        }
+    }
+
+    &__allwork {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+    }
+
+    @include xs {
+        padding-bottom: 40px;
+        margin-top: -20px;
+
+        &__menu {
+            display: none;
+        }
+
+        &__card {
+            display: none;
+            flex-direction: column;
+
+            &.active {
+                display: flex;
+            }
+
+            &-item {
+                padding-bottom: 50px;
+            }
+        }
+    }
+}

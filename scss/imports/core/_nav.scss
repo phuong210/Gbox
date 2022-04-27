@@ -1,0 +1,40 @@
+// css navigator (Menu)
+
+// MENU MOBILE
+.nav {
+    @include visible(0);
+    width: 100vw;
+    position: fixed;
+    // background: $black-cl;
+    background: $yellow-cl;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include transform(initial);
+    z-index: 300;
+    @include transition($t);
+    ul {
+        flex-direction: column;
+        @include mid();
+        text-align: center;
+        li {
+            margin: 20px auto;
+            a {
+                text-transform: uppercase;
+                padding: 15px;
+                // color: $white-cl;
+                color: $black;
+                &.active {
+                    color: $yellow-cl;
+                    // color: $black;
+                    @include transition($t);
+                }
+            }
+        }
+    }
+    
+    &.active {
+        @include visible(1);
+    }
+}

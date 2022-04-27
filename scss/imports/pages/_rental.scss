@@ -1,0 +1,272 @@
+.scrental {
+    .container {
+        display: flex;
+    }
+    &__number {
+        margin-top: -29px;
+        width: 30%;
+        height: 640px;
+        margin-right: 50px;
+        padding-left: 20px;
+        background: #525355;
+        &-card {
+            margin-top: 50px;
+        }
+       
+        &-text {
+            h2 {
+                @include text(32px, pe, 30.48px, $white-cl, none);
+            }
+            padding-top: 26px;
+            .info, .size {
+                color: $white-cl;
+            }
+        }
+    }
+    &__detail {
+        h2 {
+            padding-top: 40px;
+            padding-bottom: 43px;
+            @include text(28px, pe, 30px, $brown-cl, none);
+        }
+        &-info {
+            margin-top: -15px;
+            display: flex;
+            .form__item {
+                width: 100%;
+                &:nth-child(1) {
+                    margin-right: calc((70 / 660) * 100%);
+                    width: 250px;
+                }
+                &:nth-child(2) {
+                    width: 250px;
+                    margin-right: 0;
+                }
+                .text {
+                    display: flex;
+                    flex-direction: column;
+                    padding-bottom: 12px;
+                    .form__control {
+                        border: 1px solid $black;
+                        margin-top: 2rem;
+                        padding-left: 1rem;
+                        outline: none;
+                    }
+                }
+                label {
+                    @include text(12px, pr, 36px, $black, none);
+                }
+                input {
+                    border-top: none;
+                    border-left: none;
+                    border-right: none;
+                    outline: none;
+                    border-bottom: 1px solid $black;
+                    padding: 10px;
+                }
+            }
+        }
+        .item {
+            @include text(12px, pr, normal, $black, none);
+            padding-bottom: 20px;
+        }
+        &-number {
+            // @include midflex;
+            display: flex;
+            align-items: center;
+            .list {
+                margin-right: 20px;
+                padding: 10px 12px;
+                @include text(24px, db, 20px, #b4b4b4, none);
+                background: $black;
+                border: 1px solid $black;
+                &:hover {
+                    color: $yellow-cl;
+                    // background: $yellow-cl;
+                    @include transition($t);
+                    cursor: pointer;
+                }
+                &.active {
+                    color: $black;
+                    background: $yellow-cl;
+                    border-color: $yellow-cl;
+                }
+            }
+        }
+        &-requirement {
+            width: 100%;
+            padding-top: 32px;
+            display: flex;
+            .item {
+                width: 250px;
+                display: flex;
+                flex-direction: column;
+                &:nth-child(1) {
+                    margin-right: calc((70 / 660) * 100%);
+                }
+                label {
+                    padding-bottom: 30px;
+                }
+                textarea {
+                    border: 1px solid $black;
+                    outline: none;
+                    padding: 10px;
+                }
+                .note {
+                    padding-top: 10px;
+                    @include text(12px, pr, normal, $black, none);
+                    font-style: italic;
+                }
+            }
+        }
+        &-date {
+            display: flex;
+            align-items: flex-end;
+            // justify-content: space-between;
+            flex-wrap: wrap;
+            padding-bottom: 30px;
+            .form__item {
+                &:first-child {
+                    margin-right: 0;
+                }
+                .item__label {
+                    width: 250px;
+                    .booking {
+                        display: block;
+                    }
+                    .form__control {
+                        border: 1px solid $black;
+                        margin-top: 13px;
+                        padding: 13px;
+                        width: 100%;
+                        outline: none;
+                        @include text(12px, pr, normal, $black, none);
+                        font-style: italic;
+
+                    }
+                }
+            }
+            .form__icon {
+                margin: 5px 26px;
+                // margin-left: 26px;
+                // margin-right: 26px;
+            }
+        }
+        &-project {
+            padding-bottom: 20px;
+            .text__refer {
+                // display: block;
+                margin-top: 10px;
+                width: 99%;
+                border: 1px solid $black;
+                outline: none;
+            }
+        }
+        &-submit {
+            display: flex;
+            padding-top: 50px;
+            padding-bottom: 80px;
+            .text__submit {
+                padding-left: 20px;
+                max-width: 200px;
+                @include text(12px, pr, 24px, $black, none);
+                .bold {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    @include sm {
+        &__detail {
+            &-date {
+                .form__item {
+                    .item__label {
+                        width: 219px;
+                    }
+                }
+            }
+        }
+    }
+    @include xs {
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        &__number {
+            padding-top: 30px;
+            padding-left: 0;
+            display: flex;
+            align-items: center;
+            &-card {
+                margin-right: 25px;
+                margin-top: 0;
+            }
+            &-text {
+                padding-top: 0px;
+                h2 {
+                    padding-top: 0;
+                    color: $black;
+                }
+            }
+            @include size(100%, 100%);
+            margin-top: 0px;
+            background: $white-cl;
+            h3,
+            .info,
+            .size {
+                color: $black;
+            }
+        }
+        &__detail {
+            &-info {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                .form__item {
+                    width: 100%;
+                    &:nth-child(1) {
+                        margin-right: 0;
+                        width: 100%;
+                    }
+                    &:nth-child(2) {
+                        margin-right: 0;
+                        width: 100%;
+                    }
+                    
+                }
+                
+            }
+            &-requirement {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                .item {
+                    width: 100%;
+                }
+            }
+            &-date {
+                display: block;
+                width: 100%;
+                .form__item {
+                    .item__label {
+                        width: 100%;
+                        .form__control {
+                            width: 100%;
+                        }
+                    }
+                }
+                .form__icon {
+                    width: 100%;
+                    margin-top: 16px;
+                    margin-left: 186px;
+                    i {
+                        img {
+                            @include transform(rotate(90deg));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}

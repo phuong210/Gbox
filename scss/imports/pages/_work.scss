@@ -1,0 +1,57 @@
+.scallwork {
+    &__menu {
+    padding-top: 36px;
+    }
+    &__btn {
+        position: relative;
+        padding-top: 43px;
+        padding-bottom: 60px;
+        &-more {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        &-booknow {
+            display: flex;
+            position: absolute;
+            right: 0;
+            top: 50px;
+            .desc {
+                text-align: right;
+                max-width: 120px;
+                padding-right: 20px;
+                @include text(14px, pr, 20px, #2d2e2e, none);
+            }
+        }
+        
+    }
+    @include xs {
+        padding-bottom: 40px;
+        margin-top: 0px;
+        &__card {
+            display: none;
+            flex-direction: column;
+            &.active {
+                display: flex;
+            }
+        
+            &-item {
+                padding-bottom: 50px;
+            }
+        }
+        &__btn {
+            padding-top: 130px;
+            padding-bottom: 20px;
+            &-more {
+                position: relative;
+            }
+            &-booknow {
+                // @include mid();
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: -10px;
+            }
+        }
+    }
+}
