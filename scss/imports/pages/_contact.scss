@@ -1,63 +1,80 @@
 .scbannercontact {
-    background: url(../../../img/banner-cafe.jpg) top center / cover no-repeat;
+    // background: url(../img/banner-cafe.jpg) top center / cover no-repeat;
+    background: url(../img/banner-cafe.jpg) top center / cover no-repeat;
     text-align: center;
     margin-top: -30px;
+
     &__img {
         padding: 90px 0 28px 0;
     }
+
     &__desc {
         display: flex;
         justify-content: center;
+
         &-item {
             padding-bottom: 68px;
             text-align: right;
+
             &:last-child {
                 padding-left: 60px;
                 text-align: left;
             }
+
             p {
                 @include text(12px, pr, 30.48px, #f1f1f1, uppercase);
             }
+
             .email {
                 padding-bottom: 30px;
             }
+
             .tel {
                 .number {
                     padding-left: 35px;
                 }
             }
         }
-        
+
     }
+
     &__more {
         padding-bottom: 17px;
     }
+
     @include xs {
         margin-top: 0;
+
         &__img {
             display: none;
         }
+
         &__desc {
             display: flex;
             padding-top: 112px;
             padding-bottom: 125px;
             flex-direction: column;
+
             &-item {
                 width: 100%;
                 text-align: center;
                 padding-bottom: 0px;
+
                 &:first-child {
                     order: 2;
                 }
+
                 &:last-child {
                     padding-left: 0px;
                     text-align: center;
                 }
+
                 .email {
                     padding-bottom: 0px;
                 }
             }
         }
+
         &__more {
             display: none;
         }

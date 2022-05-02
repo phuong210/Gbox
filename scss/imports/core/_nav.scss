@@ -7,11 +7,11 @@
     position: fixed;
     // background: $black-cl;
     background: $yellow-cl;
-    top: 60px;
+    top: 40px;
     left: 0;
     right: 0;
     bottom: 0;
-    @include transform(initial);
+    // @include transform(initial);
     z-index: 300;
     @include transition($t);
     ul {
@@ -19,10 +19,11 @@
         @include mid();
         text-align: center;
         li {
-            margin: 20px auto;
+            margin: 30px auto;
             a {
                 text-transform: uppercase;
-                padding: 15px;
+                padding: 35px;
+                font-size: 25px;
                 // color: $white-cl;
                 color: $black;
                 &.active {

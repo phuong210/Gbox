@@ -29,14 +29,17 @@
         img {
             @include size(100%, 100%);
             object-fit: cover;
+            display: block;
         }
         
     }
-    .flickity-enabled.is-fullscreen {
-        object-fit: cover;
-        padding: 0px;
-        
+    .scproject__slider.is-fullscreen {
+        img {
+            padding: 5rem 2rem;
+        }
+        padding-bottom: 0;
     }
+   
     &__content {
         h3 {
             @include text(14px, pl, 22px, $black, uppercase);
@@ -99,6 +102,13 @@
         }
         &__slider {
             @include size(100%, 200px);
+        }
+        .scproject__slider.is-fullscreen {
+            margin-top: 72px;
+        
+            img {
+                padding: 15rem 2rem;
+            }
         }
         &__content {
             display: flex;

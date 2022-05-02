@@ -24,9 +24,12 @@
             object-fit: cover;
         }
     }
-    .flickity-enabled.is-fullscreen {
+    .scstudioslider__image.is-fullscreen {
+        img {
+            padding: 5rem 2rem;
+        }
         object-fit: cover;
-        padding: 0px;
+        padding-bottom: 0;
     }
     
     &__option {
@@ -87,12 +90,21 @@
             }
         }
         &__btn {
-            margin-bottom: 25px;
-            margin-top: -40px;
+            margin-bottom: 10px;
+            margin-top: 0px;
         }
         &__image {
             @include size(100%, 200px);
+            
         }
+        .scstudioslider__image.is-fullscreen {
+            margin-top: 72px;
+            img {
+                padding: 15rem 2rem;
+            }
+        }
+       
+        
         &__option {
             padding: 0;
             display: flex;

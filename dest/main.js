@@ -38,23 +38,19 @@ menuMobile();
 const bgHeader = () => {
     
     let header = document.querySelector('header .bottom');
-    let headerMobile = document.querySelector('header .top');
-
     let heightHeader = header.offsetHeight;
+
     window.addEventListener('scroll', () => {
         if (window.pageYOffset >= heightHeader) {
-            // if(window.pageXOffset > 768)
-            // {
-                header.classList.add('active');
-            // }
-            // else {
-                // headerMobile.classList.add('active');
-            // }
+            header.classList.add('active');
         }
         else {
             header.classList.remove('active');
         }
     });
+
+    
+   
 }
 bgHeader();
 
@@ -120,6 +116,8 @@ backToTop();
 // PROJECT DETAIL SLIDER
 
 const sliderHandle = () => {
+    let header = document.querySelector('header .bottom');
+    
     let slider = ".scproject__slider";
     let btnFull = ".fullscreen";
     let fullscreen = ".flickity-button-icon"
@@ -137,9 +135,9 @@ const sliderHandle = () => {
     });
 
     $(fullscreen).on("click", function () {
-        
         header.classList.remove('active');
     })
+    
 
 };
 sliderHandle();
@@ -221,7 +219,6 @@ Fancybox.bind("[data-fancybox]", {
 // RENTAL ACTIVE NUMBER
 const numberRental = () => {
     let selectNumber = document.querySelectorAll('.scrental__detail-number .list');
-    let show = true;
    
     selectNumber.forEach((item, index) => {
         
